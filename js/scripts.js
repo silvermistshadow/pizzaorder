@@ -8,16 +8,16 @@ Pizza.prototype.getPrice = function() {
     var basePrice = 5;
     var totalPrice = basePrice;
     if (this.toppings.includes("cheese")) {
-        totalPrice += Topping.price(cheese);
+        totalPrice += cheese.price;
     }
     if (this.toppings.includes("pepperoni")) {
-        totalPrice += Topping.price(pepperoni);
+        totalPrice += pepperoni.price;
     }
     if (this.toppings.includes("anchovy")) {
-        totalPrice += Topping.price(anchovy);
+        totalPrice += anchovy.price;
     }
     if (this.toppings.includes("bacon")) {
-        totalPrice += Topping.price(bacon);
+        totalPrice += bacon.price;
     }
     var dollarPrice = "$" + totalPrice.toString();
     return dollarPrice;
@@ -51,7 +51,7 @@ $(document).ready(function() {
             var topping = $(this).val();
             toppings.push(topping);
         });
-        
+
     });
 
 });
