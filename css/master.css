@@ -2,13 +2,14 @@ body {
     background-image: url(../img/pizza.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-#pizzaform {
-    color: #666666;
-    text-shadow: #333333;
+    color: white;
 }
 
 #output {
     display: none;
 }
+
+#show-pizza {
+    display: none;
+}
+
