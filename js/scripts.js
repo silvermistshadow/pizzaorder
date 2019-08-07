@@ -109,10 +109,10 @@ function displayPizzaDetails(orderToDisplay) {
 };
 
 function showPizza(pizzaId) {
-    var pizza = Order.findPizza(pizzaId);
+    var pizza = order.findPizza(pizzaId);
     $("#show-pizza").show();
     $(".pizzaSize").html(pizza.size);
-    for (var i = 0; i<= pizza.toppings.length; i++) {
+    for (var i = 0; i< pizza.toppings.length; i++) {
         $(".pizzaToppings").append(" " + pizza.toppings[i]);
     };
     
