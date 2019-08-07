@@ -15,14 +15,14 @@
         <form id="pizzaForm">
           <div class="form-group">
             <label for="pizzaSize">Size:</label>
-            <select class="form-control" id="pizzaSize">
+            <select class="form-control" id="pizzaSize" required>
               <option value="small" selected>Small</option>
               <option value="medium">Medium</option>
               <option value="large">Large</option>
             </select>
           </div>
-          <div class="form-group">
-            <label for="toppings">Toppings:</label>
+          <div class="form-group topping-group">
+            <label for="toppings">Toppings:</label><br>
             <input type="checkbox" name="topping" value="cheese"> Cheese <br>
             <input type="checkbox" name="topping" value="pepperoni"> Pepperoni <br>
             <input type="checkbox" name="topping" value="anchovy"> Anchovies <br>
@@ -30,6 +30,7 @@
           </div>
           <button type="submit" class="btn">Order</button>
         </form>
+        <div id="output"></div>
     </div>
 
 
