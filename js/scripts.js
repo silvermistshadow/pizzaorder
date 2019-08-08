@@ -121,7 +121,7 @@ function showPizza(pizzaId) {
     $(".pizzaPrice").html(pizza.price);
     var buttons = $("#buttons");
     buttons.empty();
-    buttons.append("<button class='deleteButton' id=" + pizza.id + ">Delete</button>")
+    buttons.append("<button class='deleteButton btn btn-danger' id=" + pizza.id + ">Delete</button>")
 };
 
 function attachPizzaListeners() {
