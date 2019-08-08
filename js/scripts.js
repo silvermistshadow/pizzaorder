@@ -37,9 +37,10 @@ Order.prototype.deletePizza = function(id) {
 }
 
 
-function Pizza(toppings, size) {
+function Pizza(toppings, size, price) {
     this.toppings = toppings;
     this.size = size;
+    this.price = price;
 }
 
 var smallPrice = 3;
@@ -74,6 +75,7 @@ Pizza.prototype.getPrice = function() {
         console.log("FLAGRANT SYSTEM ERROR")
     }
     var dollarPrice = "$" + totalPrice.toString();
+    this.price = dollarPrice;
     return dollarPrice;
 }
 
@@ -115,7 +117,10 @@ function showPizza(pizzaId) {
     for (var i = 0; i< pizza.toppings.length; i++) {
         $(".pizzaToppings").append(" " + pizza.toppings[i]);
     };
-    
+    $(".pizzaPrice").html(pizza.price);
+    var buttons = $("#buttons");
+    buttons.empty();
+    buttons.append("<button class='deleteButton' id=" + pizza.id + ">Delete</button>")
 };
 
 function attachPizzaListeners() {
@@ -140,7 +145,7 @@ $(document).ready(function() {
             toppings.push(topping);
         });
         var inputSize = $("#pizzaSize").val();
-        var newPizza = new Pizza(toppings, inputSize);
+        var newPizza = new Pizza(toppings, inputSize, "0");
         var outputPrice = newPizza.getPrice();
         order.addPizza(newPizza);
         $("#output").html("Price:" + " " + outputPrice);
