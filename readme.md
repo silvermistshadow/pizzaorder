@@ -8,14 +8,18 @@
 
 _A site that lets the user order a pizza with a size and some toppings._
 
+0. Pizza constructor with prototypes and properties
+1. Method for pizza cost
+2. Allow user to choose toppings and size
+3. More than one pizza
+4. Display ordered pizzas as links
+
 ## Setup/Installation Requirements
 
 * _Load site_
 * _Fill out the form_
 * _press button_
 * _get a price_
-* _format_
-
 
 
 ## Known Bugs
