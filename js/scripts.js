@@ -29,7 +29,7 @@ Order.prototype.deletePizza = function(id) {
     for (var i=0; i< this.pizzas.length; i++) {
         if (this.pizzas[i]) {
             if (this.pizzas[i].id == id) {
-                delete this.pizzas[i].id
+                delete this.pizzas[i];
             }
         }
     };
@@ -105,7 +105,7 @@ function displayPizzaDetails(orderToDisplay) {
     var pizzaList = $("ul#pizzas");
     var htmlForPizzaInfo = "";
     orderToDisplay.pizzas.forEach(function(pizza) {
-        htmlForPizzaInfo += "<li id=" + pizza.id + ">" + pizza.size + "</li>";
+        htmlForPizzaInfo += "<li id=" + pizza.id + ">" + pizza.size + pizza.toppings + "</li>";
     });
     pizzaList.html(htmlForPizzaInfo);
 };
@@ -114,6 +114,7 @@ function showPizza(pizzaId) {
     var pizza = order.findPizza(pizzaId);
     $("#show-pizza").show();
     $(".pizzaSize").html(pizza.size);
+    $(".pizzaToppings").empty();
     for (var i = 0; i< pizza.toppings.length; i++) {
         $(".pizzaToppings").append(" " + pizza.toppings[i]);
     };
@@ -139,6 +140,7 @@ $(document).ready(function() {
     attachPizzaListeners();
     $("form#pizzaForm").submit(function(event){
         event.preventDefault();
+        toppings = [];
         $("#output").show();
         $("input:checkbox[name=topping]:checked").each(function(){       
             var topping = $(this).val();
